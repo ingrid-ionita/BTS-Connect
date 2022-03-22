@@ -1,0 +1,48 @@
+/* FOOTER STYLING */
+#footer2 {
+	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
+}
+#footer2 .footer2 {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+#footer2 h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#footer2 h3 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.3rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#footer2 .social-icon2 {
+	display: flex;
+	margin-bottom: 30px;
+}
+#footer2 .social-item2 {
+	height: 50px;
+	width: 50px;
+	margin: 0 5px;
+}
+#footer2 .social-item2 img {
+	filter: grayscale(1);
+	transition: 0.3s ease filter;
+}
+#footer2 .social-item2:hover img {
+	filter: grayscale(0);
+}
+#footer2 p {
+	color: white;
+	font-size: 1.3rem;
+}
