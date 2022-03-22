@@ -1,14 +1,15 @@
+/*GENERAL SETUP STYLING*/
 * {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	box-sizing: border-box; /*This keeps the boxes in one line*/
 }
 html {
 	font-size: 10px;
 	font-family: 'Bank Gothic', sans-serif; 
 	scroll-behavior: smooth;
 }
-a {
+a { /*This one removes the line underneath BTS in navbar*/
 	text-decoration: none;
 }
 .container {
@@ -26,61 +27,49 @@ img {
 	object-fit: cover;
 }
 p {
-	color: black;
+	color: #333;
 	font-size: 1.4rem;
 	margin-top: 5px;
-	line-height: 2.5rem;
+	line-height: 2.7rem;
 	font-weight: 300;
-	letter-spacing: 0.05rem;
-}
-.section-title {
-	font-size: 4rem;
-	font-weight: 300;
-	color: black;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	letter-spacing: 0.2rem;
-	text-align: center;
+	letter-spacing: 0.03rem;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 
-.cta {
-	display: inline-block;
-	border-radius: 20px;
-	padding: 10px 30px;
-	color: white;
-	background-color: transparent;
-	border: 4px solid pink;
-	font-size: 2rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-	margin-top: 30px;
-	transition: 0.3s ease;
-	
-}
-
-.hero h1{
-	color: whitesmoke;
-	font-size: 4rem;
-}
-
-.cta:hover {
-	color: white;
-	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
-}
+/*BTS ON TOP LEFT*/
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
 	color: white;
 }
-.brand h1 span {
-	color: crimson;
+
+
+/* SPOTIFY BUTTON */
+.cta {
+	display: inline-block;
+	border-radius: 10px;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 4px solid #FFF1FA;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.7s ease;
+}
+.cta:hover {
+	color: #333;
+	border-color: transparent;
+	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
 }
 
-/* Header section */
+
+/* NAVBAR STYLING */
 #header {
 	position: fixed;
-	z-index: 1000;
+	z-index: 1000; /* Navbar needs this!!*/
 	left: 0;
 	top: 0;
 	width: 100vw;
@@ -88,7 +77,7 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: #f9b0c3;
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -97,13 +86,13 @@ p {
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	max-width: 1300px;
+	max-width: 100%;
 	padding: 0 10px;
 }
-#header .nav-list ul {
+#header .nav-list ul { /*This makes the navbar cute and transparent but not animated yet*/
 	list-style: none;
 	position: absolute;
-	background-color: rgb(194, 167, 212);
+	background-color: #e3abce; /*Couldn't add the gradient, so sad!!*/
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -114,15 +103,16 @@ p {
 	align-items: center;
 	z-index: 1;
 	overflow-x: hidden;
-	transition: 0.5s ease left;
+	transition: 0.7s ease left;
 }
-#header .nav-list ul.active {
+#header .nav-list ul.active { /*When the navbar is full screen, then 
+	it is hidden and stays at the top*/
 	left: 0%;
 }
-#header .nav-list ul a {
+#header .nav-list ul a { /*Styling the navbar menu contents*/
 	font-size: 2.5rem;
 	font-weight: 500;
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.1rem;
 	text-decoration: none;
 	color: white;
 	text-transform: uppercase;
@@ -135,7 +125,7 @@ p {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0);
-	color: rgba(240, 248, 255, 0.021);
+	color: #333;
 	font-size: 13rem;
 	letter-spacing: 50px;
 	z-index: -1;
@@ -146,9 +136,9 @@ p {
 	letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-	color: #131313;
+	color: #f9b0c3;
 }
-#header .hamburger {
+#header .hamburger { /*Good YouTube tutorials on creating the hamburger!*/
 	height: 60px;
 	width: 60px;
 	display: inline-block;
@@ -202,12 +192,40 @@ p {
 #header .hamburger.active .bar::after {
 	top: 0;
 }
-/* End Header section */
 
-/* Hero Section */
+  
+  /* Style the search box inside the navigation bar */
+  #header input[type=text] {
+	float: right;
+	padding: 5px;
+	border: none;
+	margin-top: 16px;
+	margin-right: 15px;
+	font-size: 15px;
+	border-radius: 5px;
+	display: block;
+	font-family: 'Bank Gothic', sans-serif; 
+  }
+  
+  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+  @media screen and (max-width: 600px) {
+	.topnav a, .topnav input[type=text] {
+	  float: none;
+	  display: block;
+	  text-align: left;
+	  width: 100%;
+	  margin: 0;
+	  padding: 14px;
+	}
+	.topnav input[type=text] {
+	  border: 1px solid #ccc;
+	}
+  }
 
+  
+/* MAIN TITLE + BUTTON */
 #hero {
-	background-image: url(./img/BTS\ BACKGROUND.jpg);
+	background-image: url(MT_BTS_On_Stage.webp);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -224,28 +242,37 @@ p {
 	opacity: 0.4;
 	z-index: -1;
 }
+.hero h2{ /*BTS X ARMY title */
+	color: white;
+	font-size: 4rem;
+}
+#hero h2 {
+	font-size: 6.5rem;
+}
 
 
-/* End Hero Section */
-
-/* Services Section */
+/* WHO WE ARE SECTION STYLING */
+.section-title {
+	color: #333;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-size: 7rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	margin-bottom: 30px;
+}
 #services .services {
 	flex-direction: column;
 	text-align: center;
-	max-width: 1500px;
+	max-width: 100%;
 	margin: 0 auto;
 	padding: 100px 0;
 }
 #services .service-top {
-	max-width: 500px;
+	max-width: 600px;
 	margin: 0 auto;
-}
-#services .service-bottom {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 50px;
 }
 #services .service-item {
 	flex-basis: 80%;
@@ -273,32 +300,51 @@ p {
 	opacity: 0.9;
 	z-index: -1;
 }
-#services .service-bottom .icon {
-	height: 80px;
-	width: 80px;
-	margin-bottom: 20px;
+
+/*PINK TILES STYLING*/
+#services .service-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 80px;
+	margin-bottom: 1rem;
 }
-#services .service-item h2 {
+
+#services .service-item h3 {
 	font-size: 2rem;
 	color: white;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	text-transform: uppercase;
 }
 #services .service-item p {
 	color: white;
 	text-align: left;
 }
-/* End Services Section */
 
-/* Projects section */
+
+/*LINE BREAK STYLING*/
+hr{
+	height: 1px;
+	background-color: #f9b0c3;
+	border: solid;
+	color: #f9b0c3;
+	border-width: 0.4rem;
+	margin-top: 40px;
+}
+
+
+/* BTS MEMBERS STYLING*/
 #projects .projects {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 40px 0;
 }
-#projects .projects-header h1 {
+#projects .projects-header h2 {
 	margin-bottom: 50px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
 }
 #projects .all-projects {
 	display: flex;
@@ -327,17 +373,34 @@ p {
 	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
 	color: white;
 }
-#projects .project-info h1 {
+#projects .project-info li{
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+#projects .project-info ul{
+	margin-left: 20px;
+}
+#projects .project-info h2 {
 	font-size: 4rem;
 	font-weight: 500;
 }
-#projects .project-info h2 {
+#projects .project-info h3 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #projects .project-info p {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.5rem;
 	color: white;
+	margin-top: 5px;
+	margin-left: 10px;
 }
 #projects .project-img {
 	flex-basis: 50%;
@@ -361,9 +424,27 @@ p {
 #projects .project-item:hover .project-img img {
 	transform: scale(1.1);
 }
-/* End Projects section */
+#projects .project-item {
+	flex-direction: row;
+}
+#projects .project-item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+#projects .project-item {
+	height: 400px;
+	margin: 0;
+	width: 100%;
+	border-radius: 0;
+}
+#projects .all-projects .project-info {
+	height: 100%;
+}
+#projects .all-projects .project-img {
+	height: 100%;
+}
 
-/* About Section */
+
+/*ABOUT BTS INFORMATION SECTION STYLING*/
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
@@ -379,11 +460,12 @@ p {
 	width: 100%;
 }
 #about .col-right h2 {
-	font-size: 1.8rem;
+	font-size: 7rem;
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	margin-bottom: 10px;
 }
+
 #about .col-right p {
 	margin-bottom: 20px;
 }
@@ -406,22 +488,179 @@ p {
 	top: 19px;
 	height: 98%;
 	width: 98%;
-	border: 7px solid crimson;
+	border: 7px solid linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);;
 	z-index: -1;
 }
-/* End About Section */
+#about a.cta3{
+	display: inline-block;
+	border-radius: 10px;
+	padding: 10px 30px;
+	color: #333;
+	background-color: transparent;
+	border: 4px solid #f9b0c3;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.2s ease;
+		
+}
+#about	a.cta3:hover {
+	color: white;
+	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
+	border-color: transparent;
+}
 
-/* contact Section */
+#about a.cta4{
+	display: inline-block;
+	border-radius: 10px;
+	padding: 10px 30px;
+	color: #333;
+	background-color: transparent;
+	border: 4px solid #f9b0c3;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	margin-left: 40px;
+	transition: 0.2s ease;
+		
+}
+#about	a.cta4:hover {
+	color: white;
+	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
+	border-color: transparent;
+}
+
+/* CARROUSEL */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.title2 h2{
+	color: #333;
+	font-weight: 500;
+	font-size: 4rem;
+	letter-spacing: 0.2rem;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	text-align: right;
+	margin-right: 10vw;
+	margin-bottom: 4vh;
+	border-style: solid;
+	border-color: #f9b0c3;
+	border-top: 9px #f9b0c3;
+	border-left: 2px transparent;
+	padding: 20px 0 10px;
+	padding-right: 20px;
+	border-width: 10px;
+}
+.title3 h2{
+	border-style: solid;
+	border-color: #f9b0c3;
+	border-top: 9px #f9b0c3;
+	border-left: 2px transparent;
+	padding: 20px 0 10px;
+	padding-top: 40px;
+	padding-right: 20px;
+	border-width: 10px;
+	border-right: 2px transparent;
+}
+	/* Hide the images by default */
+	.mySlides {
+	display: none;
+	}
+	/* Next & previous buttons */
+	.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: #f9b0c3;
+	font-weight: bold;
+	font-size: 40px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	}
+	/* Position the "next button" to the right */
+	.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+	}
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+	background-color: #f9b0c3;
+	color: #333;
+	}
+	/* Caption text */
+	.text {
+	background-color: white;
+	color: #333;
+	font-size: 15px;
+	padding: 8px 12px;
+	border: #131313;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	}
+	.numbertext {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: #333;
+	background-color:#f9b0c3;
+	font-size: 30px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+	letter-spacing: 0rem;
+	}
+	/* The dots/bullets/indicators */
+	.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #f9b0c3;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	}
+	.active, .dot:hover {
+	background-color: #a2c8ec;
+	}
+	/* Fading animation */
+	.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+	}
+
+
+/*PROMO TIME STYLING */
 #contact .contact {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
 	width: 90%;
+	color: #333;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #contact .contact-items {
-	/* max-width: 400px; */
 	width: 100%;
 }
+#contact .section-title{
+	letter-spacing: 10px;
+	font-style: italic;
+}
+
 #contact .contact-item {
 	width: 80%;
 	padding: 20px;
@@ -444,21 +683,27 @@ p {
 	margin: 0 auto;
 	margin-bottom: 10px;
 }
-#contact .contact-info h1 {
-	font-size: 2.5rem;
+#contact .contact-info h2 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 3rem;
+	color: #333;
+	letter-spacing: 1px;
 	font-weight: 500;
 	margin-bottom: 5px;
 }
-#contact .contact-info h2 {
+#contact .contact-info h3 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-size: 1.3rem;
 	line-height: 2rem;
-	font-weight: 500;
+	font-weight: 100;
+	color: #333;
 }
-/*End contact Section */
+* {box-sizing:border-box}
 
-/* Footer */
+
+/* FOOTER STYLING */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-image: linear-gradient(45deg, #fbcabb, #f9b0c3, #e3abce, #ceb6d9, #a2c8ec);
 }
 #footer .footer {
 	min-height: 200px;
@@ -472,7 +717,17 @@ p {
 	font-size: 1.8rem;
 	letter-spacing: 0.1rem;
 	margin-top: 10px;
+	margin-bottom: 5px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#footer h3 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.3rem;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
 	margin-bottom: 10px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #footer .social-icon {
 	display: flex;
@@ -494,9 +749,34 @@ p {
 	color: white;
 	font-size: 1.3rem;
 }
-/* End Footer */
 
-/* Keyframes */
+
+/*SECOND BUTTON AT THE BOTTOM OF THE PAGE*/
+.cta2 {
+	display: inline-block;
+	border-radius: 10px;
+	padding: 10px 30px;
+	color: white;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: transparent;
+	border: 4px solid #FFF1FA;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.7s ease;
+	margin-bottom: 40px;
+	
+}
+.cta2:hover {
+	color: white;
+	background-color: #BF0000;
+	border-color: #BF0000;
+	font-style: italic;
+}
+
+
+/* KEYFRAMES */
 @keyframes hamburger_puls {
 	0% {
 		opacity: 1;
@@ -524,13 +804,20 @@ p {
 }
 @keyframes text_reveal_name {
 	100% {
-		color: crimson;
+		color: #f9b0c3;
 		font-weight: 500;
 	}
 }
-/* End Keyframes */
+@-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+	}
+@keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+	}
 
-/* Media Query For Tablet */
+/* TABLET MEDIA QUERY */
 @media only screen and (min-width: 768px) {
 	.cta {
 		font-size: 2.5rem;
@@ -540,41 +827,15 @@ p {
 		font-size: 6rem;
 	}
 
-	/* Hero */
-	#hero h1 {
-		font-size: 7rem;
-	}
-	/* End Hero */
 
-	/* Services Section */
+	/* INFORMATION ABOUT OUR WEBSITE*/
 	#services .service-bottom .service-item {
 		flex-basis: 45%;
 		margin: 2.5%;
 	}
-	/* End Services Section */
 
-	/* Project */
-	#projects .project-item {
-		flex-direction: row;
-	}
-	#projects .project-item:nth-child(even) {
-		flex-direction: row-reverse;
-	}
-	#projects .project-item {
-		height: 400px;
-		margin: 0;
-		width: 100%;
-		border-radius: 0;
-	}
-	#projects .all-projects .project-info {
-		height: 100%;
-	}
-	#projects .all-projects .project-img {
-		height: 100%;
-	}
-	/* End Project */
 
-	/* About */
+	/* ABOUT*/
 	#about .about {
 		flex-direction: row;
 	}
@@ -588,7 +849,7 @@ p {
 		top: 34px;
 		height: 98%;
 		width: 98%;
-		border: 10px solid crimson;
+		border: 10px solid #f9b0c3;
 	}
 	#about .col-right {
 		text-align: left;
@@ -597,9 +858,8 @@ p {
 	#about .col-right h1 {
 		text-align: left;
 	}
-	/* End About */
 
-	/* contact  */
+	/* CONTACT*/
 	#contact .contact {
 		flex-direction: column;
 		padding: 100px 0;
@@ -631,13 +891,12 @@ p {
 		text-align: left;
 		padding-left: 20px;
 	}
-	/* End contact  */
 }
-/* End Media Query For Tablet */
 
-/* Media Query For Desktop */
+
+/* DESKTOP MEDIA QUERY */
 @media only screen and (min-width: 1200px) {
-	/* header */
+	/* HEADER */
 	#header .hamburger {
 		display: none;
 	}
@@ -657,11 +916,9 @@ p {
 	#header .nav-list ul a:after {
 		display: none;
 	}
-	/* End header */
 
 	#services .service-bottom .service-item {
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
 }
-/* End  Media Query For Desktop */
